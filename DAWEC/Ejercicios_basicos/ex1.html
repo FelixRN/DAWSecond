@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felix Rojas</title>
+</head>
+<body>
+    <p>Felix <br></p>
+    
+    <script>
+        document.write("Felix");
+        alert("Lo has conseguido");
+
+        function suma(a = 12345, b = 67890) {
+            let c = a+b;
+            document.write("El resultado de " + a + " + " + b + " es: " + c+"<br/> <br/> ");
+            alert("El resultado de " + a + " + " + b + " es: " + c);
+        }
+        
+        function multiplicacion(a = 123, b = 456) {
+            let c = a*b;
+            document.write("El resultado de " + a + " * " + b + " es: " + c+"<br/>");
+            alert("El resultado de " + a + " * " + b + " es: " + c);
+        }
+        suma();
+        multiplicacion();
+    </script>
+</body>
+</html>

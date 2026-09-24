@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function almacenarColores(){
+            let arrayColores = [];
+            let numColoresIntroducidos = 0;
+
+            while (true) {
+                let color = prompt("Introduzca un color:");
+                numColoresIntroducidos++;
+            if (color === "rojo") {
+                break;
+            } if (color === "verde") {
+                continue;
+            } arrayColores.push(color);           
+        }
+        console.log(arrayColores);
+        }
+        alert(numColoresIntroducidos + " " + arrayColores);
+    }
+    </script>
+</body>
+</html>

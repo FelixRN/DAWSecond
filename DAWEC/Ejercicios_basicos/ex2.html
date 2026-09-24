@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segunda parte</title>
+</head>
+<body>
+    
+    <script>
+        function nombre(nombre, apellido) {
+            var nombre = prompt("Introduzca su nombre:");
+            var apellido = prompt("Introduzca su apellido:");
+
+            document.write("Hola Sr/Sra " + nombre + " " + apellido + "<br> <br>");
+        }
+        nombre();
+        
+        function multiplicacion(num1, num2) {
+            var num1 = prompt("Introduzca un número: ");
+            var num2 = prompt("Introduzca otro número: ");
+            var resultadoM = parseInt(num1) * parseInt(num2);
+            var resultadoR = parseInt(num1) - parseInt(num2);
+            var resultadoD = parseInt(num1) / parseInt(num2);
+
+            document.write("La multiplicación de " + num1 + " y "  + num2 + " es: " + resultadoM + "<br>");
+            document.write("La resta de " + num1 + " y "  + num2 + " es: " + resultadoR + "<br>");
+            document.write("La división de " + num1 + " y "  + num2 + " es: " + resultadoR + "<br>");
+        }
+        multiplicacion();
+
+        function operacion(base, altura) {
+            var base = parseInt(prompt("Dime la base de un rectangulo: "));
+            var altura = parseInt(prompt("Dime la altura de un rectangulo"));
+            var perimetro = 2 * (base + altura);
+            var superficie = base * altura;
+
+            document.write("El perimetro del rectangulo es: " + perimetro + "<br> <br>");
+            document.write("La superficie del rectangulo es: " + superficie + "<br> <br>");         
+        }
+        operacion();
+    
+    </script>
+
+</body>
+</html>
