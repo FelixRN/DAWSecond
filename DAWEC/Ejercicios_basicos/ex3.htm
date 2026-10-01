@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pag 3. Condiciones y Bucles </title>
+</head>
+<body>
+    <script>
+        function div() {
+            var n1 = parseInt(prompt("Dame el primer número:"));
+            var n2 = parseInt(prompt("Dame el segundo número:"));
+            
+        if (n2 != 0) {
+            alert("No se puede dividir entre 0");
+            document.write("No se puede dividir entre 0"); 
+            return;
+        } 
+            const división = n1 / n2 ;
+            const mensaje = "La división de " + n1 + " y " + n2 + " es: " + división;
+
+            alert(mensaje);
+            document.write(mensaje);
+    }  
+        //div();
+        
+        function positivo (){
+            var n1 = parseInt(prompt("Dame un número positivo o negativo:"));
+            var n2 = parseInt(prompt("Dame otro número positivo o negativo:"));
+
+        if (n1 > 0 && n2 > 0) {
+            alert("Los 2 son positivos");
+            document.write("Los 2 son positivos");
+        } else if(n1 > 0 && n2 < 0 ) {
+            alert(n1 + " es positivos y " + n2 + " es negativo.");
+            document.write(n1 + " es positivos y " + n2 + " es negativo.");
+        } else if (n1 < 0 &&  n2 > 0){
+            alert(n1 + " es negativo y " + n2 + " es positivo.");
+            document.write(n1 + " es negativo y " + n2 + " es positivo.");
+        } else {
+            alert(n1 + " y " + n2 + " son negativos.");
+            document.write(n1 + " y " + n2 + " son negativos.");
+        }
+    }
+        //positivo();
+
+        function comparacion (){
+            var n1 = parseInt(prompt("Dame un número:"));
+            var n2 = parseInt(prompt("Dame segundo número:"));
+            var n3 = parseFloat(prompt("Dame el último número:"));
+
+        if (n1 > n2 && n1 > n3) {
+            alert(n1 + " es mayor que "+ n2 + " y " + n3);
+            document.write(n1 + " es mayor que "+ n2 +" y " + n3);
+        } else if(n2 > n1 && n2 > n3) {
+            alert(n2 + " es mayor que "+ n1 +" y " + n3);
+            document.write(n2 + " es mayor que "+ n1 +" y " + n3);
+        } else if (n3 > n1 && n3 > n2){
+            alert(n3 + " es mayor que "+ n1 +" y " + n2);
+            document.write(n3 + " es mayor que "+ n1 +" y " + n2);
+        } else if (n1 == n2 || n1 == n3 || n2 == n3) {
+            alert("Hay números que son iguales");
+            document.write("Hay números que son iguales");
+        } else{
+            alert("No hay números iguales");
+        }
+    }
+        //comparacion();
+
+        /* function contarNegativos() {
+            var cantidadNegativos = 0;
+
+            for (var i = 1; i <= 5; i++) {
+                var numero = parseFloat(prompt("Dame el número " + i + ":"));
+
+                if (numero < 0) {
+                    cantidadNegativos++;
+                }
+            }
+
+            alert("Has introducido " + cantidadNegativos + " números negativos.");
+            document.write("<br>Has introducido " + cantidadNegativos + " números negativos.");
+        }
+        contarNegativos();
+        */
+        
+        function contarNegativos(){
+            var numeroNegativo = 0;
+
+            for(var i = 1; i <= 5 ; i++){
+                var numero = parseFloat(prompt("Dame el número " + i + " :"))
+                if(numero < 0){
+                    numeroNegativo++;
+                }
+            const mensaje = "Has introducido " + numeroNegativo + " números negativos."
+            alert(mensaje);
+            document.write(mensaje);
+            }
+        }
+        contarNegativos();
+    </script>
+</body>
+</html>

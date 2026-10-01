@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splice y Slice</title>
+</head>
+<body>
+    <script>
+        function splice_slice(){
+            var textil = ["tela", "bies", "hilo", "tijeras", 
+                        "máquina de coser", "botón"];
+
+            textil.splice(1,1); //Eliminamos "bies"
+            console.log(textil);
+
+            textil.splice(2,0, "hilo torzal") //Añadiendo "hilo torzal"
+            console.log(textil);
+
+            textil.splice(3,1, "cúter rotatorio", "mesa de corte");//Elimino tijera y sustituirlo
+            console.log(textil);
+
+            var modificado1 = textil.slice(0,3);
+            console.log(modificado1);    
+
+            var modificado2 = textil.slice(3,6);
+            console.log(modificado2);    
+
+            modificado1.splice(0,0, "remalladora");
+            console.log(modificado1);
+
+            modificado1.splice(3,0, "cinta métrica");
+            console.log(modificado1);
+
+            console.log(textil);
+            console.log(modificado1);
+            console.log(modificado2);
+
+            //textil.sort((a, b) => a.length - b.length);
+            textil.sort(function(a,b){
+                if (a > b) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            })
+            console.log(textil)
+        }
+    
+    
+    
+    </script>
+
+
+</body>
+</html>
