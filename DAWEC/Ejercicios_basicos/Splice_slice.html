@@ -37,18 +37,18 @@
             console.log(modificado2);
 
             //textil.sort((a, b) => a.length - b.length);
-            textil.sort(function(a,b){
-                if (a > b) {
+
+            textil.sort(function(a,b) {
+                if (a.length > b.length) {
                     return 1;
-                } else {
+                } else if (a.length > b.length){
+                    return -1;
+                }else{
                     return 0;
                 }
             })
             console.log(textil)
         }
-    
-    
-    
     </script>
 
 

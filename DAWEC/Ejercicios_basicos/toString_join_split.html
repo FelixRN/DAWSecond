@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toString_join_split</title>
+</head>
+<body>
+    <script>
+        var lista1 = [];
+        for (let i = 1; i <= 5 ; i++) {
+            
+            var pregunta = parseFloat(prompt("Intruduce el número " + i + ":"));
+            lista1.push(pregunta);
+        }
+        console.log(lista1.join("/"));
+        console.log(lista1.sort((a, b) => {
+            if (a > b) {
+                    return 1;
+                } else if (a < b){
+                    return -1;
+                }else{
+                    return 0;
+                }
+            }));
+        console.log(lista1.join("/"));
+
+
+        let arrayPalabras = ["abedul", "casa", "coche", "rio", "alameda", "alegría", "portón"];
+        let empiezanPorA = arrayPalabras.filter(function (palabra) {
+            if (palabra[0] == "a") {
+            return true;
+            } else {
+            return false;
+            }
+            });
+
+            let empiezanPorAbis = arrayPalabras.filter(palabra =>palabra[0] == "a");
+            
+
+    </script>
+</body>
+</html>
