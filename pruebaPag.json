@@ -1,0 +1,15 @@
+{
+    name: "Europa",
+    eyebrow: "El océano secreto",
+    description:
+      "Desciende sobre una corteza de hielo surcada por cicatrices rojizas. Bajo tus pies, un océano global aguarda en silencio: uno de los lugares más prometedores para encontrar vida.",
+    distance: "628 M km",
+    duration: "6 años",
+    temperature: "−160 °C",
+    accent: "europa",
+    images: [
+      "",
+      "https://images.unsplash.com/photo-1708257105520-214ad2246e44?auto=format&fit=crop&w=1400&q=85",
+      "https://images.unsplash.com/photo-1706562018300-93e3df266600?auto=format&fit=crop&w=1400&q=85",
+    ],
+  },

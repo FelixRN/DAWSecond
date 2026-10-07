@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach, includes y Array.from</title>
+</head>
+<body>
+    <h1 class="titularNoticia">Noticia importante 1</h1>
+    <h2 class="titularNoticia">Noticia importante 2</h2>
+    <h2 class="titularNoticia">Noticia importante 3</h2>
+
+    <p class="textoNoticia">Contenido1</p>
+    <p class="textoNoticia">Contenido2</p>
+    
+    <button onclick="seeAlert()" >Este boton hace algo </button>
+
+
+
+    <script>
+        function seeAlert() {
+            let elementos = Array.from(document.getElementsByClassName("titularNoticia"));
+            elementos.forEach(function (elemento) {
+                let titular = elemento.textContent;
+
+                if (!titular.includes("tr")) {
+                    alert(titular);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
