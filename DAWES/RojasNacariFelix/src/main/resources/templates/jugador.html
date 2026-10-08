@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Jugador</title>
+</head>
+<body>
+<h1>Datos del jugador</h1>
+
+<p>Nickname: <span th:text="${jugador.nickname}"></span></p>
+<p>Equipo: <span th:text="${jugador.equipo}"></span></p>
+<p>Kills totales: <span th:text="${jugador.kill}"></span></p>
+<p>Muertes totales: <span th:text="${jugador.muertes}"></span></p>
+<p>Asistencias totales: <span th:text="${jugador.asistencia}"></span></p>
+
+<p>KDA: <span th:text="${KDA}"></span> </p>
+</body>
+</html>

@@ -103,4 +103,29 @@ public class Controller {
         model.addAttribute("numeroNota", numero);
         return "fichaEstudiante";
     }
+
+    // 1. Obtenemos los valores por separado para que el código sea limpio
+    int kills = jugador.getKill();
+    int asistencias = jugador.getAsistencia();
+    int muertes = jugador.getMuertes();
+
+    // 2. Calculamos el denominador
+    int participaciones = kills + asistencias;
+
+    // 3. Declaramos la variable para el KDA (normalmente es un float o double)
+    double kda = 0.0;
+
+// 4. Validamos para evitar el error de división por cero (Division by Zero)
+if (muertes > 0) {
+        // Si queremos la fórmula inversa (Kills + Asistencias) / Muertes
+        // Usamos (double) para forzar a que la división conserve los decimales
+        kda = (double) participaciones / muertes;
+    } else {
+        // Si tiene 0 muertes, su KDA técnicamente sería infinito o igual a sus participaciones
+        kda = (double) participaciones;
+    }
+
+// 5. Guardamos el dato en el modelo para pasarlo a la vista
+model.addAttribute("kda", kda);
+
 }
