@@ -1,0 +1,49 @@
+CONFIGURACIÓN DEL ENTORNO PARA EL EXAMEN
+========================================
+
+Este examen se realiza SIN asistencia de inteligencia artificial. Antes de empezar, comprueba que tu Visual Studio Code cumple esta configuración. Si algo no coincide, avisa al profesor ANTES de comenzar.
+
+1. QUÉ NO ESTÁ PERMITIDO
+------------------------
+
+- GitHub Copilot, Copilot Chat, IntelliCode, Codeium, Tabnine, Amazon Q, Continue o cualquier otra extensión o servicio de IA.
+- Texto gris que sugiere líneas o bloques completos de código (sugerencias en línea).
+- Chats, asistentes o buscadores con IA, en cualquier dispositivo.
+
+
+2. CONFIGURACIÓN DEL PROYECTO
+-----------------------------
+
+El repositorio incluye el archivo .vscode/settings.json con el siguiente contenido. NO lo modifiques ni lo elimines.
+
+{
+  "chat.disableAIFeatures": true,
+  "github.copilot.enable": { "*": false },
+  "github.copilot.editor.enableAutoCompletions": false,
+  "github.copilot.nextEditSuggestions.enabled": false,
+  "editor.inlineSuggest.enabled": false
+}
+
+Si tu versión de VS Code no reconoce "chat.disableAIFeatures", puedes ignorar el aviso: los demás ajustes cubren lo mismo.
+
+
+3. EXTENSIONES QUE DEBEN ESTAR DESACTIVADAS
+-------------------------------------------
+
+En la pestaña Extensiones (Ctrl+Shift+X), pulsa clic derecho y elige "Disable (Workspace)" en estas extensiones si aparecen instaladas:
+
+- GitHub Copilot
+- GitHub Copilot Chat
+- IntelliCode
+- IntelliCode Completions
+- Codeium
+- Tabnine
+- Amazon Q
+- Continue
+
+4. NORMAS
+---------
+
+- Está prohibido reactivar los ajustes anteriores, instalar extensiones de IA o modificar la configuración durante el examen.
+- El profesor puede supervisar tu pantalla durante la prueba.
+- Si se detecta el uso de IA, el examen se calificará con un 0.
