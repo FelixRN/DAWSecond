@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astra | Más allá de la Tierra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&family=Space+Grotesk:wght@400;500&display=swap">
+    <link rel="stylesheet" href="style/estilos.css">
+</head>
+<body>
+    
+    <header class="cabecera">
+        <div class="cabecera-contenido">
+            <a href="#inicio" class="logo">Astra</a>
+            <nav class="navegacion">
+                <ul class="menu">
+                    <li class="menu-item"><a href="#europa">Destino</a></li>
+                    <li class="menu-item"><a href="#experiencia">La experiencia</a></li>
+                    <li class="menu-item"><a href="#contacto">Reservar</a></li>
+                </ul>
+            </nav>
+            <a href="#contacto" class="cabecera-itinerario">Iniciar viaje <span>→</span></a>
+        </div>
+    </header>
+
+    <main id="contenido-principal">
+        <section id="inicio" class="inicio">
+            <div class="inicio-contenido">
+                <p class="inicio-etiqueta">Expedición 01</p>
+                <h1 id="titulo-principal">Más allá de la Tierra</h1>
+                <p class="inicio-texto">Cruza el sistema solar hasta el mundo más elegante de todos. Sobrevuela sus anillos de hielo, contempla tormentas color miel y vive un amanecer que ningún viajero terrestre ha visto antes.</p>
+            </div>
+        </section>
+
+        <section id="destinos" class="seccion seccion-destinos" >
+            <h2 id="titulo-destinos" class="titulo-destinos">Mundos que cambian tu forma de mirar.</h2>
+
+            <article id="europa" class="destino">
+                <div class="destino-contenido">
+                    <p class="destino-etiqueta">El océano secreto</p>
+                    <h3 id="titulo-europa">Europa</h3>
+                    <p class="destino-descripcion">Desciende sobre una corteza de hielo surcada por cicatrices rojizas. Bajo tus pies, un océano global aguarda en silencio: uno de los lugares más prometedores para encontrar vida.</p>
+
+                    <dl class="datos">
+                        <div class="dato">
+                            <dt>Distancia</dt>
+                            <dd>628 M km</dd>
+                        </div>
+                        <div class="dato">
+                            <dt>Duración estimada</dt>
+                            <dd>6 años</dd>
+                        </div>
+                        <div class="dato">
+                            <dt>Temperatura</dt>
+                            <dd>-160 °C</dd>
+                        </div>
+                    </dl>
+
+                    <a href="#contacto" class="enlace-itinerario">Solicitar itinerario <span>→</span></a>
+                </div>
+
+                <div id="experiencia" class="galeria">
+                    <div class="galeria-item galeria-item-alto">
+                        <img src="img/EUROPA.jpg" alt="Superficie helada y agrietada de Europa, satélite de Júpiter.">
+                    </div>
+                    <div class="galeria-item">
+                        <img src="img/EUROPA.jpg" alt="" class="recorte-1">
+                    </div>
+                    <div class="galeria-item">
+                        <img src="img/EUROPA.jpg" alt="" class="recorte-2">
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section id="contacto" class="seccion seccion-contacto">
+            <div class="contacto-intro">
+                <h2 id="titulo-contacto">El universo te espera.</h2>
+                <p>Cuéntanos qué mundo quieres conocer. Nuestro equipo diseñará una expedición a tu medida.</p>
+            </div>
+
+            <form class="formulario" action="#" method="post">
+                <fieldset class="formulario-grupo">
+                    <legend class="visually-hidden">Solicitud de expedición</legend>
+
+                    <div class="campo">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" autocomplete="name" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" placeholder="nombre@gmail.com" autocomplete="email" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="destino">Destino</label>
+                        <select id="destino" name="destino" required>
+                            <option value="europa" selected>Europa</option>
+                        </select>
+                    </div>
+
+                    <div class="campo campo-completo">
+                        <label for="mensaje">Cuéntanos sobre tu viaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                    </div>
+
+                    <div class="campo-completo formulario-acciones">
+                        <button type="submit" class="boton-enviar">Enviar solicitud <span>→</span></button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <a href="#inicio" class="logo">Astra</a>
+        <a href="#inicio" class="volver-arriba">Volver arriba</a>
+    </footer>
+</body>
+</html>
