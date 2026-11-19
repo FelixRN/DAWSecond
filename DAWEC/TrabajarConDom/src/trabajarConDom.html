@@ -77,16 +77,34 @@
         let nombre = document.querySelectorAll("input[name='sexo']");
         let clase_par = document.querySelectorAll("li.par");
 
-
         let PriParrafo = document.getElementById("seccionPrimera").firstElementChild;
         let TerParrafo = document.getElementById("seccionPrimera").lastElementChild;
 
         let ultimo_list = document.querySelector("ul").lastElementChild;
 
         let nom = document.getElementsByName("form").firstElementChild;
+/*---------------Ejercicio 3--------------------------*/
+        let recuperar = document.querySelector("ul").innerHTML;
+        let recuperar2 = document.querySelector("ul").textContent;
+        let recuperar3 = document.querySelector("input[type='radio']").value;
+        let recuperar3_2 = document.querySelector("input").value;
+    /*  let recuperar3_3 = (document.querySelector("input[type='radio']:checked")).value;*/
+        let recuperar3_4 = "";
+        let recuperar3_5 = "";
 
-
-
+        let seleccionado = document.querySelector("input[name ='sexo']:checked").value;
+        let valor = seleccionado ? seleccionado.value : null ;
+        
+        document.addEventListener("click", function(){
+           recuperar3_4 = document.querySelector("input[name='sexo']:checked").value;
+           console.log(recuperar3_4);
+        })
+        
+        document.querySelectorAll("input[name='sexo']").forEach(function(radio) {
+            radio.addEventListener("change", function(event) {
+                recuperar3_5 = document.querySelector("input[name='sexo']:checked").value;
+            });
+        });
 
     </script>
 </body>

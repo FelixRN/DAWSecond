@@ -139,6 +139,26 @@ public class AlumnoRepository {
         );
     }
 
+    public AlumnoDTO buscarPorId(String id) {
+        String sql = "SELECT a.id, a.nombre, a.apellidos, a.id_municipio, m.nombre AS municipio, " + "a.familia_numerosa, a.activo "  + " FROM alumnos a JOIN municipios m ON a.id_municipio =  m.id_municipio " + "WHERE a.id = ?";
+        AlumnoDTO alumno = null;
+        Connection connection = null;
+        try {
+            connection = dataSource.getConnection();
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, id);
+            logger.debug("Query a ejecutar: {}", ps);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                alumno = mapearAlumno(rs);
+            }
+            connection.close();
+        } catch (SQLException e) {
+            logger.error("Error al buscar el alumno {}", id, e);
+            cerrarConexion(connection);
+        }
+        return alumno;
+    }
     //ACTUALIZAR
     public int actualizar(AlumnoDTO alumno) {
         String sql = "UPDATE alumnos SET nombre = ?, apellidos = ?, id_municipio = ?, "

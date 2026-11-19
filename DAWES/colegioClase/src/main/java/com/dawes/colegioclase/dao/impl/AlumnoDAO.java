@@ -19,6 +19,11 @@ public class AlumnoDAO implements IAlumnoDAO {
     }
 
     @Override
+    public AlumnoDTO buscarPorId(String id) {
+        return alumnoRepository.buscarPorId(id);
+    }
+
+    @Override
     public int insertarAlumno(AlumnoDTO alumno) {
         return alumnoRepository.insertar(alumno);
     }
@@ -27,6 +32,7 @@ public class AlumnoDAO implements IAlumnoDAO {
     public int actualizarAlumno(AlumnoDTO alumno) {
         return alumnoRepository.actualizar(alumno);
     }
+
     @Override
     public int eliminarAlumno(Integer id) {
         return alumnoRepository.eliminar(id);

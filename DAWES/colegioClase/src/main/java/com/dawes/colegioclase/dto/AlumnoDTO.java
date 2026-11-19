@@ -22,7 +22,7 @@ public class AlumnoDTO {
         this.activo = activo;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 

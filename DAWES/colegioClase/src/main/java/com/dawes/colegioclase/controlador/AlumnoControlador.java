@@ -3,6 +3,8 @@ package com.dawes.colegioclase.controlador;
 import com.dawes.colegioclase.dto.AlumnoDTO;
 import com.dawes.colegioclase.excepcion.ReglaNegocioException;
 import com.dawes.colegioclase.service.AlumnoService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -118,14 +120,19 @@ public class AlumnoControlador {
                                    @RequestParam(required = false) Boolean familiaNumerosa,
                                    @RequestParam(required = false) Boolean activo,
                                    Model model) {
-        boolean filtroFamiliaNumerosa = familiaNumerosa != null &&
-                familiaNumerosa;
+        boolean filtroFamiliaNumerosa = familiaNumerosa != null && familiaNumerosa;
         boolean filtroActivo = activo != null && activo;
         ArrayList<AlumnoDTO> listaAlumnos =
                 alumnoService.buscarAlumnos(nombre, apellido,
                         filtroFamiliaNumerosa, filtroActivo);
         model.addAttribute("listaAlumnos", listaAlumnos);
         return "alumnos/borrar";
+    }
+
+    @PostMapping("/alumnos")
+    public ResponseEntity<AlumnoDTO> insertarAlumno(@RequestBody AlumnoDTO alumno) {
+        AlumnoDTO alumnoInsertado = alumnoService.insertarAlumnoRest(alumno);
+        return new ResponseEntity<>(alumnoInsertado, HttpStatus.CREATED);
     }
 
     @PostMapping("/{id}/eliminar")

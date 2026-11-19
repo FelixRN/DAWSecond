@@ -7,6 +7,10 @@ import java.util.ArrayList;
 
 public interface IAlumnoDAO {
     ArrayList<AlumnoDTO> buscarAlumnos(String nombre, String apellido, boolean familiaNumerosa, boolean activo);
+
+    AlumnoDTO buscarPorId(String id);
+
+    public AlumnoDTO buscarPorId(String id);
     int insertarAlumno(AlumnoDTO alumno);
     int actualizarAlumno(AlumnoDTO alumno);
     int eliminarAlumno(Integer id);
