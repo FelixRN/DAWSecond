@@ -1,0 +1,439 @@
+:root {
+    /* Colores */
+    --color-fondo: #121212;
+    --color-superficie: #1e1e1e;
+    --color-cabecera: #1f1f1f;
+    --color-negro: #000000;
+    --color-blanco: #ffffff;
+    --color-texto-suave: #b3b3b3;
+    --color-verde: #1ed760;
+    --color-azul: #1e88ff;
+    
+    --espacio-xs: 0.5rem;
+    --espacio-sm: 1rem;
+    --espacio-md: 1.5rem;
+    --espacio-lg: 2.5rem;
+
+    --radio: 0.5rem;
+}
+
+
+/* ---------- 2. RESET Y BASE ---------- */
+*   {
+    margin: 0;
+    box-sizing: border-box;
+    }
+
+ul {
+    list-style: none;
+    padding: 0;
+    }
+
+a {
+    text-decoration: none;
+    color: var(--color-blanco);
+    }
+
+img {
+    max-width: 100%;
+    display: block;
+    }
+
+body {
+        font-family: "Open Sans", Arial, sans-serif;
+        background-color: var(--color-fondo);
+        color: var(--color-blanco);
+    }
+
+/* Contenedor en columna: el footer baja siempre al fondo de la ventana
+   (main crece con flex: 1), sin usar position */
+#main_container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+
+main {
+        flex: 1;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: var(--espacio-lg);
+        padding: var(--espacio-sm);
+    }
+
+.section_title {
+        font-size: 1.25rem;
+        margin-bottom: var(--espacio-sm);
+    }
+
+
+/* ---------- 3. BOTONES (reutilizado en hero y artistas) ---------- */
+.btn {
+        padding: var(--espacio-xs) var(--espacio-md);
+        background-color: var(--color-verde);
+        color: var(--color-negro);
+        border: none;
+        border-radius: 2rem;
+        font-family: inherit;
+        font-size: 0.875rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: filter 0.2s;
+    }
+
+.btn:hover {
+        filter: brightness(1.15);
+    }
+
+
+/* ---------- 4. HEADER ---------- */
+/* Móvil: logo arriba y menú debajo, todo centrado */
+header {
+        background-color: var(--color-cabecera);
+        padding: var(--espacio-sm);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--espacio-xs);
+        }
+
+header h1 {
+        color: var(--color-verde);
+        font-size: 1.75rem;
+        font-weight: 800;
+        }
+
+nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--espacio-md);
+        }
+
+nav ul li a:hover {
+        color: var(--color-verde);
+        }
+
+
+/* ---------- 5. HERO ---------- */
+/* Móvil: texto arriba, imagen debajo */
+.hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--espacio-md);
+        text-align: center;
+        }
+
+.hero_text {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--espacio-sm);
+        }
+
+.hero_text h2 {
+        font-size: 1.5rem;
+        }
+
+.hero_text p {
+        color: var(--color-texto-suave);
+        font-size: 0.9rem;
+        }
+
+.hero_image {
+        width: 100%;
+        }
+
+.hero_image img {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        border-radius: var(--radio);
+        }
+
+
+/* ---------- 6. ARTISTAS POPULARES ---------- */
+.artists_grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--espacio-sm);
+        }
+
+/* Móvil: 1 card por línea. Las cards no crecen (flex-grow: 0),
+   así la última fila nunca se estira */
+.artist_card {
+        flex: 0 0 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--espacio-xs);
+        padding: var(--espacio-md) var(--espacio-sm);
+        background-color: var(--color-superficie);
+        border-radius: var(--radio);
+        text-align: center;
+        }
+
+.artist_card img {
+        width: 7.5rem;
+        height: 7.5rem;
+        border-radius: 50%;
+        object-fit: cover;
+        }
+
+.artist_card h3 {
+        font-size: 1rem;
+        }
+
+.artist_genre {
+        color: var(--color-verde);
+        font-size: 0.8rem;
+        font-weight: 700;
+        }
+
+.artist_desc {
+        color: var(--color-texto-suave);
+        font-size: 0.8rem;
+        }
+
+/* margin-top: auto empuja el botón al fondo de la card
+   aunque los textos tengan distinta longitud */
+.artist_card .btn {
+        margin-top: auto;
+        }
+
+
+/* ---------- 7. LISTA DE CANCIONES ---------- */
+.song_list {
+        display: flex;
+        flex-direction: column;
+        }
+
+.song {
+        display: flex;
+        align-items: center;
+        gap: var(--espacio-sm);
+        padding: var(--espacio-xs);
+        border-radius: var(--radio);
+        }
+
+.song:hover {
+        background-color: var(--color-superficie);
+        }
+
+.song_number {
+        flex: 0 0 1.5rem;
+        text-align: center;
+        color: var(--color-texto-suave);
+        }
+
+/* flex: 0 0 evita que la portada se encoja; con alto fijo no se deforma */
+.song img {
+        flex: 0 0 3rem;
+        width: 3rem;
+        height: 3rem;
+        object-fit: cover;
+        border-radius: 0.25rem;
+        }
+
+/* Título + artista: ocupa todo el espacio libre */
+.song_info {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        }
+
+.song_title {
+        font-size: 0.9rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        }
+
+.song_artist {
+        color: var(--color-texto-suave);
+        font-size: 0.8rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        }
+
+/* En móvil el álbum está oculto */
+.song_album {
+        display: none;
+        }
+
+.song_duration {
+        flex: 0 0 3rem;
+        text-align: right;
+        color: var(--color-texto-suave);
+        font-size: 0.85rem;
+        }
+
+
+/* ---------- 8. FOOTER (REPRODUCTOR) ---------- */
+/* Móvil: solo canción actual y botón de play */
+footer {
+        display: flex;
+        align-items: center;
+        gap: var(--espacio-sm);
+        padding: var(--espacio-xs) var(--espacio-sm);
+        background-color: var(--color-negro);
+        }
+
+.player_song {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        gap: var(--espacio-sm);
+        }
+
+.player_song img {
+        flex: 0 0 3rem;
+        width: 3rem;
+        height: 3rem;
+        object-fit: cover;
+        border-radius: 0.25rem;
+        }
+
+.player_controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--espacio-md);
+        }
+
+/* Anterior / siguiente: ocultos en móvil */
+.btn_skip {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--color-blanco);
+        font-size: 1.1rem;
+        cursor: pointer;
+        }
+
+.btn_play {
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--color-blanco);
+        color: var(--color-negro);
+        border: none;
+        border-radius: 50%;
+        font-size: 1rem;
+        cursor: pointer;
+        }
+
+/* Volumen: oculto en móvil */
+.player_volume {
+        display: none;
+        }
+
+.player_volume input {
+        flex: 1;
+        max-width: 8rem;
+        accent-color: var(--color-azul);
+        }
+
+
+/* ==========================================================
+   MEDIA QUERIES (mobile-first, solo min-width)
+   ========================================================== */
+
+/* 480px: breakpoint extra, justificado porque el enunciado pide
+   2 cards por línea entre 480px y 768px */
+@media (min-width: 480px) {
+
+    .artist_card {
+        flex: 0 0 calc((100% - var(--espacio-sm)) / 2);
+        }
+}
+
+@media (min-width: 768px) {
+
+    /* Header: fila, logo a la izquierda y menú a la derecha */
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: var(--espacio-sm) var(--espacio-md);
+        }
+
+    /* Hero: en fila, texto centrado verticalmente respecto a la imagen */
+    .hero {
+        flex-direction: row;
+        text-align: left;
+        }
+
+    .hero_text {
+        flex: 1;
+        align-items: flex-start;
+        }
+
+    .hero_image {
+        flex: 1;
+        }
+
+    /* Artistas: 4 por línea */
+    .artist_card {
+        flex: 0 0 calc((100% - 3 * var(--espacio-sm)) / 4);
+        padding: var(--espacio-md) var(--espacio-xs);
+        }
+
+    /* Canciones: se muestra el álbum */
+    .song_album {
+        display: block;
+        flex: 0 0 30%;
+        color: var(--color-texto-suave);
+        font-size: 0.85rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        }
+
+    /* Reproductor: tres zonas repartidas a partes iguales */
+    footer {
+        padding: var(--espacio-xs) var(--espacio-md);
+        }
+
+    .player_controls {
+        flex: 1;
+        }
+
+    .btn_skip {
+        display: block;
+        }
+
+    .player_volume {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: var(--espacio-xs);
+        }
+}
+
+@media (min-width: 1024px) {
+
+    /* Escritorio: contenido centrado y con ancho máximo */
+    main {
+        max-width: 60rem;
+        margin: 0 auto;
+        padding: var(--espacio-md);
+        }
+
+    .hero_text h2 {
+        font-size: 2rem;
+        }
+
+    .artist_card {
+        padding: var(--espacio-md) var(--espacio-sm);
+        }
+}
